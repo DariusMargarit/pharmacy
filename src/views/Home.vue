@@ -1,18 +1,29 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="row justify-center q-gutter-md">
+      <Card v-for="(element, index) in $store.state.products" :key="index"
+        :title="element.title"
+        :short-description="element.shortDescription"
+        :long-description="element.longDescription"
+        :image="element.image"
+        :index="index"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import Card from "../components/Card";
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+      Card
   }
 }
 </script>
+
+<style>
+  .home {
+    margin-top: 20px;
+  }
+</style>
