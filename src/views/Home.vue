@@ -2,9 +2,7 @@
   <div>
     <q-parallax :height="700">
       <template v-slot:media>
-        <!--img src="https://iwebp.de/images/medical-products-pharmacy02d87a0f65abb890.jpg"-->
-        <!--img src="https://thehill.com/sites/default/files/drugs_pharmacy_istock.jpg"-->
-        <img src="https://www.baltictimes.com/media/photos/146868_15124517295df8b72d1bd7c_big.jpg">
+        <img src="https://www.baltictimes.com/media/photos/146868_15124517295df8b72d1bd7c_big.jpg" style="filter: brightness(70%);">
       </template>
 
       <template v-slot:content="scope">

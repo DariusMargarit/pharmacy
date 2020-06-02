@@ -9,6 +9,7 @@
         <q-dialog v-model="showEdit" persistent>
           <PopupItems
             :index="index"
+            :price="price"
           />
         </q-dialog>
         <q-btn flat v-close-popup round dense icon="close" />
@@ -38,7 +39,8 @@
             description: "",
             image: null,
             index: null,
-            label: 1
+            label: 1,
+            price: null
         },
         data () {
             return {

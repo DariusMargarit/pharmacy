@@ -30,6 +30,22 @@
             :delete="deleteArray"
           />
 
+          <q-item v-ripple>
+            <q-item-section avatar>
+              <q-avatar rounded class="cursor-pointer">
+                <img src="../assets/logoPillSlim.png">
+              </q-avatar>
+            </q-item-section>
+            <q-item-section overline>TOTAL: </q-item-section>
+            <q-item-section>{{getTotalPrice}} RON</q-item-section>
+            <q-item-section side top>
+              <div class="q-gutter-md" style="font-size: 25px; visibility: hidden">
+                <q-icon class="cursor-pointer" name="add" />
+                <q-icon class="cursor-pointer" name="remove" />
+                <q-icon class="cursor-pointer" name="remove_shopping_cart" />
+              </div>
+            </q-item-section>
+          </q-item>
         </q-list>
       </q-page>
     </q-page-container>
@@ -47,6 +63,11 @@
         data () {
             return {
                 shopItems: this.returnArray()
+            }
+        },
+        computed: {
+            getTotalPrice () {
+                return this.$store.getters.getTotalPrice;
             }
         },
         methods: {

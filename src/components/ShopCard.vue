@@ -1,24 +1,4 @@
 <template>
-  <!--q-card class="my-card" flat bordered>
-    <q-card-section horizontal>
-      <q-img
-          class="col"
-          :src="image"
-      >
-        <div class="absolute-bottom text-h6">
-          {{title}}
-        </div>
-      </q-img>
-
-      <q-card-actions vertical class="justify-around q-px-md">
-        <q-btn flat round icon="remove_shopping_cart" @click="removeProduct" />
-        <q-btn flat round icon="more_horiz" />
-        <q-btn flat round >
-          {{getCount}}
-        </q-btn>
-      </q-card-actions>
-    </q-card-section>
-  </q-card-->
   <div>
     <q-item v-ripple>
       <q-item-section avatar>
@@ -27,7 +7,7 @@
         </q-avatar>
       </q-item-section>
       <q-item-section overline>{{title}}</q-item-section>
-      <q-item-section>{{price}} RON</q-item-section>
+      <q-item-section>{{price * getCount}} RON</q-item-section>
       <q-item-section side top>
         <q-item-label caption>{{getCount}} PRODUSE</q-item-label>
         <div class="q-gutter-md" style="font-size: 25px;">
@@ -44,6 +24,7 @@
           :description="longDescription"
           :image="image"
           :index="index"
+          :price="price"
       />
     </q-dialog>
   </div>

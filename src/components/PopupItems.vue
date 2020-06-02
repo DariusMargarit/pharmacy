@@ -3,7 +3,7 @@
     <q-card-section class="row items-center">
       <q-avatar icon="shopping_cart" color="dark" text-color="white" />
       <span class="q-ml-sm cursor-pointer">
-        Doresc sa cumpar {{itemsCount}} produse. <br> TOTAL: {{itemsCount}} RON
+        Doresc sa cumpar {{itemsCount}} produse. <br> TOTAL: {{itemsCount * price}} RON
         <q-popup-edit v-model.number="itemsCount" buttons>
           <q-input type="number" v-model.number="itemsCount" dense autofocus />
         </q-popup-edit>
@@ -24,7 +24,8 @@
     export default {
         name: "PopupItems",
         props: {
-            index: null
+            index: null,
+            price: null
         },
         data () {
             return {

@@ -144,8 +144,14 @@ export default new Vuex.Store({
         if (state.shop[i] === item)
           ++count;
       }
-
       return count;
+    },
+    getTotalPrice: state => {
+      let total = 0;
+      for (let i = 0; i < state.shop.length; ++i) {
+        total += state.products[state.shop[i]].price;
+      }
+      return total
     }
   },
   actions: {

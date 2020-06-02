@@ -18,6 +18,7 @@
           :description="longDescription"
           :image="image"
           :index="index"
+          :price="price"
       />
     </q-dialog>
   </q-card>
