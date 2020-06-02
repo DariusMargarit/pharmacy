@@ -11,13 +11,26 @@
 
     <q-page-container :class="{ 'bg-dark': $q.dark.isActive, 'bg-white': !$q.dark.isActive  }">
       <q-page padding>
-        <div class="row justify-center q-gutter-md">
+        <!--div class="row justify-center q-gutter-md">
           <ShopCard v-for="(element, index) in $store.state.shop" :key="index"
             :title="$store.state.products[element].title"
             :image="$store.state.products[element].image"
             :index="element"
           />
-        </div>
+        </div-->
+
+        <q-list bordered>
+
+          <ShopCard v-for="(element, index) in shopItems" :key="index"
+            :title="$store.state.products[element].title"
+            :image="$store.state.products[element].image"
+            :price="$store.state.products[element].price"
+            :long-description="$store.state.products[element].longDescription"
+            :index="element"
+            :delete="deleteArray"
+          />
+
+        </q-list>
       </q-page>
     </q-page-container>
   </q-layout>
@@ -25,10 +38,25 @@
 
 <script>
     import ShopCard from "./ShopCard";
+
     export default {
         name: "Shop",
         components: {
             ShopCard
+        },
+        data () {
+            return {
+                shopItems: this.returnArray()
+            }
+        },
+        methods: {
+            returnArray() {
+                const items = this.$store.state.shop;
+                return [...new Set(items)];
+            },
+            deleteArray() {
+                this.shopItems = this.returnArray();
+            }
         }
     }
 </script>

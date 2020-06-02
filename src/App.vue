@@ -1,8 +1,15 @@
 <template>
   <div>
     <Navbar />
-    <q-layout view="lHh Lpr lFf">
+    <q-layout view="hHh lpR fff">
       <router-view />
+      <br><br>
+      <br><br>
+      <q-footer elevated class="bg-grey-8 text-white">
+        <q-toolbar>
+          Realizat de Andone Alexandru si Ciofalau Dragos © CoffeOverload
+        </q-toolbar>
+      </q-footer>
     </q-layout>
   </div>
 </template>

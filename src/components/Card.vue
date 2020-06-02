@@ -4,13 +4,12 @@
         style="image-rendering: pixelated"
         :src="image"
         basic
-    >
-      <div class="absolute-bottom text-h6">
-        {{title}}
-      </div>
-    </q-img>
+    />
 
     <q-card-section>
+      <div class="text-h6">{{title}}</div>
+      <div class="text-subtitle2">{{price}} RON</div>
+      <br>
       {{shortDescription}}
     </q-card-section>
     <q-dialog v-model="layout">
@@ -35,6 +34,7 @@
             title: "",
             shortDescription: "",
             longDescription: "",
+            price: null,
             image: null,
             index: null
         },
