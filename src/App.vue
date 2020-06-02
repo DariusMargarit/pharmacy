@@ -7,7 +7,7 @@
       <br><br>
       <q-footer elevated class="bg-grey-8 text-white">
         <q-toolbar>
-          Realizat de Andone Alexandru si Ciofalau Dragos © CoffeOverload
+          Realizat de Andone Alexandru si Ciofalau Dragos © CoffeOverdose
         </q-toolbar>
       </q-footer>
     </q-layout>
